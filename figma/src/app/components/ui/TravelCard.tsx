@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { ThemeConfig } from '../../types';
 
-interface CardProps {
+interface TravelCardProps {
   children: React.ReactNode;
   className?: string;
   title?: string;
@@ -14,7 +14,7 @@ interface CardProps {
   theme?: ThemeConfig;
 }
 
-export const Card = ({ children, className, title, action, delay = 0, variant = 'default', theme }: CardProps) => {
+export const TravelCard = ({ children, className, title, action, delay = 0, variant = 'default', theme }: TravelCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

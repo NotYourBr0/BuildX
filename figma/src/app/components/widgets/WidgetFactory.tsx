@@ -10,7 +10,7 @@ import { PhotoGridWidget } from './PhotoGridWidget';
 import { StatsWidget } from './StatsWidget';
 import { TimelineWidget } from './TimelineWidget';
 import { DocumentsWidget } from './DocumentsWidget';
-import { Card } from '../ui/card';
+import { TravelCard } from '../ui/TravelCard';
 
 const COMPONENT_MAP: Record<string, React.ComponentType<any>> = {
   countdown: CountdownWidget,
@@ -40,12 +40,12 @@ export const WidgetFactory = ({ config, data, theme }: WidgetFactoryProps) => {
   const specificProps = config.type === 'countdown' ? { daysLeft: data.daysUntilTrip } : {};
 
   return (
-    <Card
+    <TravelCard
       title={config.title}
       className={`h-full ${config.colSpan === 2 ? 'md:col-span-2' : ''}`}
       theme={theme}
     >
       <Component {...specificProps} theme={theme} />
-    </Card>
+    </TravelCard>
   );
 };
